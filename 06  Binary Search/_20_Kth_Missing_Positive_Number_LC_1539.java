@@ -1,0 +1,17 @@
+package _06_Binary_Search;
+
+public class _20_Kth_Missing_Positive_Number_LC_1539 {
+    public int findKthPositive(int[] arr, int k) {
+        int low=0;
+        int high=arr.length-1;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(arr[mid]-mid-1<k){
+                low=mid+1;
+            }else{
+                high=mid-1;
+            }
+        }
+        return low+k;
+    }
+}
